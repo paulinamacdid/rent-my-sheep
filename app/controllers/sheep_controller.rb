@@ -1,7 +1,5 @@
 class SheepController < ApplicationController
   def index
-  end
-
-  def show
+    @sheeps = Sheep.all
   end
 end
