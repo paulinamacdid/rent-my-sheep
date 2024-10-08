@@ -1,0 +1,2 @@
+class SheepController < ApplicationController
+end
