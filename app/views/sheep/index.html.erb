@@ -3,3 +3,18 @@
     <h1>Rent-A-Sheep Wellbeing Website</h1>
   </div>
 </div>
+
+<div class="card" style="width: 18rem;">
+<% @sheeps.each do |sheep| %>
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <div class="card-body-description">
+    <h2><%= link_to sheep.name, sheep_path(sheep) %></h2>
+    </div>
+    <div class="card-body-buttons">
+    <a class="book"></a>
+    <%= link_to "Details", sheep_path(sheep), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+</div>
