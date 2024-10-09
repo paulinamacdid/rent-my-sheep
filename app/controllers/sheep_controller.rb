@@ -23,7 +23,6 @@ class SheepController < ApplicationController
     end
   end
 
-
   private
 
   def sheep_params
