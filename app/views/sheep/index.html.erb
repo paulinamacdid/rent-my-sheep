@@ -1,20 +1,29 @@
 <div class="banner" style="background-image: url(<%= asset_path 'banner_image.jpg' %>)">
   <div class="text-center">
-    <h1 class="m-3">Rent-A-Sheep Wellbeing Website</h1>
+    <h1 class="m-3">Rent-A-Sheep</h1>
+    <h2 class="m-3"> Wellbeing Website</h2>
   </div>
 </div>
 
-<div class="card" style="width: 18rem;">
-<% @sheeps.each do |sheep| %>
-  <%= image_tag "sheep.image_url", class: "card-img-top"%>
-  <div class="card-body">
-    <div class="card-body-description">
-      <h2><%= link_to sheep.name, sheep_path(sheep) %></h2>
-    </div>
-    <div class="card-body-buttons">
-      <a class="book"></a>
-    <%= link_to "Details", sheep_path(sheep), class: "btn btn-leaf" %>
-    </div>
+
+<div class="container mt-3">
+  <div class="row">
+    <% @sheeps.each do |sheep| %>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem; border-color: #e3a16a; border-width: 2px; background-color: rgb(254, 254, 254);">
+          <%= image_tag sheep.image_url, class: "card-img-top" %>
+          <div class="card-body">
+            <div class="card-body-description">
+              <h2><%= sheep.name %></h2>
+              <p><%= sheep.day_rate %></p>
+            </div>
+            <div class="card-body-buttons">
+              <a class="book"></a>
+            <%= link_to "Details", sheep_path(sheep), class: "btn btn-leaf" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
 </div>
