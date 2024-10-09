@@ -9,15 +9,15 @@ class SheepController < ApplicationController
 
   def new
     @sheep = Sheep.new
-    @user = User.find(params[:user_id])
   end
 
   def create
     @sheep = Sheep.new(sheep_params)
-    @user = User.find(params[:user_id])
-    @sheep.user = @sheep
+    @user = current_user
+    @sheep.user = @user
     if @sheep.save
-      redirect_to sheep_path(@sheep)
+      redirect_to sheep_path
+      # (@sheep)
     else
       render :new, status: :unprocessable_entity
     end
