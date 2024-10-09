@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $sky;
+  color: $ocean;
+}
+
+.navbar-brand {
+  height: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,5 +17,11 @@
 }
 
 .logo {
-  width: 50px;
+  width: 80px;
+  height: 80px;
+}
+
+.nav-item {
+  font-weight: 800;
+  font-size: 20px;
 }
