@@ -1,8 +1,12 @@
 
-<h2><%= @sheep.name %></h2>
-<%= image_tag(@sheep.image_url) %>
-<p><%= @sheep.location %></p>
-<p><%= @sheep.description %></p>
-<p><%= @sheep.weight %></p>
-<p><%= @sheep.breed%></p>
-<p><%= @sheep.day_rate%></p>
+<div class="container">
+  <h2><%= @sheep.name %></h2>
+  <%= image_tag(@sheep.image_url) %>
+  <div>
+    <p><%= @sheep.location %></p>
+    <p><%= @sheep.description %></p>
+    <p><%= @sheep.weight %></p>
+    <p><%= @sheep.breed%></p>
+    <p><%= @sheep.day_rate%></p>
+  </div>
+</div>
