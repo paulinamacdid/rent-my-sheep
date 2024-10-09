@@ -24,7 +24,14 @@
         <h5>About Me: </h5>
         <p><%= @sheep.description %></p>
       </div>
-      <%= link_to "Sheep List", sheep_index_path, class: "btn btn-primary " %>
+        <div class=" d-flex justify-content-evenly my-3">
+          <div>
+            <%= link_to "Sheep List", sheep_index_path, class: "btn btn-leaf" %>
+          </div>
+          <div>
+            <%= link_to "Book now", "#", class: "btn btn-leaf justify-content-between" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
