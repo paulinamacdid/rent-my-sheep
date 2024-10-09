@@ -1,19 +1,19 @@
 <div class="banner" style="background-image: url(<%= asset_path 'banner_image.jpg' %>)">
   <div class="text-center">
-    <h1>Rent-A-Sheep Wellbeing Website</h1>
+    <h1 class="m-3">Rent-A-Sheep Wellbeing Website</h1>
   </div>
 </div>
 
 <div class="card" style="width: 18rem;">
 <% @sheeps.each do |sheep| %>
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <%= image_tag "sheep.image_url", class: "card-img-top"%>
   <div class="card-body">
     <div class="card-body-description">
-    <h2><%= link_to sheep.name, sheep_path(sheep) %></h2>
+      <h2><%= link_to sheep.name, sheep_path(sheep) %></h2>
     </div>
     <div class="card-body-buttons">
-    <a class="book"></a>
-    <%= link_to "Details", sheep_path(sheep), class: "btn btn-primary" %>
+      <a class="book"></a>
+    <%= link_to "Details", sheep_path(sheep), class: "btn btn-leaf" %>
     </div>
   </div>
 <% end %>
