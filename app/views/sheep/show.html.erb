@@ -1,6 +1,6 @@
-<h1>Sheep Details</h1>
+
 <h2><%= @sheep.name %></h2>
-<p><%= @sheep.image_url %></p>
+<%= image_tag(@sheep.image_url) %>
 <p><%= @sheep.location %></p>
 <p><%= @sheep.description %></p>
 <p><%= @sheep.weight %></p>
