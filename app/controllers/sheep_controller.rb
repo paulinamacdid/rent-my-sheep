@@ -6,9 +6,6 @@ class SheepController < ApplicationController
   def show
     @sheep = Sheep.find(params[:id])
   end
-<<<<<<< HEAD
-end
-=======
 
   def new
     @sheep = Sheep.new
@@ -20,12 +17,11 @@ end
     @user = User.find(params[:user_id])
     @sheep.user = @sheep
     if @sheep.save
-      redirect_to sheep_path (@sheep)
+      redirect_to sheep_path(@sheep)
     else
       render :new, status: :unprocessable_entity
     end
   end
-
 
   private
 
@@ -33,4 +29,3 @@ end
     params.require(:sheep).permit(:name, :image_url, :location, :description, :weight, :breed, :day_rate)
   end
 end
->>>>>>> fcc11e86d65ceb9fddeecfc9483c0169784f975b
