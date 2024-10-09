@@ -1,13 +1,13 @@
  <h1 class="m-5">List a Sheep</h1>
  <div class="container mt-5">
       <%= simple_form_for [@sheep] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :image_url %>
-        <%= f.input :location %>
-        <%= f.input :description %>
-        <%= f.input :weight %>
-        <%= f.input :breed %>
-        <%= f.input :day_rate %>
+        <%= f.input :name, placeholder: 'Name', label:false %>
+        <%= f.input :image_url, placeholder: 'Image_url', label:false %>
+        <%= f.input :location, placeholder: 'Location', label:false %>
+        <%= f.input :description, placeholder: 'Add a description of your sheep here...', label:false %>
+        <%= f.input :weight, placeholder: 'Weight in kg', label:false %>
+        <%= f.input :breed, placeholder: 'Breed', label:false %>
+        <%= f.input :day_rate, laceholder: 'Price per day in pound', label:false %>
         <%= f.submit class: 'btn btn-leaf' %>
       <% end %>
   </div>
