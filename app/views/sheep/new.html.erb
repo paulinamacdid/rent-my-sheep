@@ -1,13 +1,17 @@
- <h1 class="m-5">List a Sheep</h1>
- <div class="container mt-5">
+<div class="text-center d-flex justify-content-center">
+  <div class="m-3 col-md-6">
+    <h1 class="container mt-3 mx-5">Add your sheep to the flock:</h1>
       <%= simple_form_for [@sheep] do |f| %>
-        <%= f.input :name, placeholder: 'Name', label:false %>
-        <%= f.input :image_url, placeholder: 'Image_url', label:false %>
-        <%= f.input :location, placeholder: 'Location', label:false %>
-        <%= f.input :description, placeholder: 'Add a description of your sheep here...', label:false %>
-        <%= f.input :weight, placeholder: 'Weight in kg', label:false %>
-        <%= f.input :breed, placeholder: 'Breed', label:false %>
-        <%= f.input :day_rate, laceholder: 'Price per day in pound', label:false %>
-        <%= f.submit class: 'btn btn-leaf' %>
+        <div class="form-inputs">
+          <%= f.input :name, placeholder: 'Name', label:false, input_html: { class: 'form-control' }%>
+          <%= f.input :image_url, placeholder: 'Image_url', label:false, input_html: { class: 'form-control' } %>
+          <%= f.input :location, placeholder: 'Location', label:false, input_html: { class: 'form-control' } %>
+          <%= f.input :description, placeholder: 'Add a description of your sheep here...', label:false, input_html: { class: 'form-control' } %>
+          <%= f.input :weight, placeholder: 'Weight in kg', label:false, input_html: { class: 'form-control' } %>
+          <%= f.input :breed, placeholder: 'Breed', label:false, input_html: { class: 'form-control' } %>
+          <%= f.input :day_rate, placeholder: 'Price per day in pound', label:false, input_html: { class: 'form-control' } %>
+          <%= f.submit 'Add your sheep', class: 'btn btn-leaf' %>
+        </div>
       <% end %>
   </div>
+</div>
