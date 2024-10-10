@@ -1,47 +1,58 @@
 
 <div class="container">
-  <div class="show_card">
-    <div class= "text-center title">
-    <h2><%= @sheep.name %></h2>
-    <h4><%= @sheep.breed%> breed</h4>
-    <%= image_tag(@sheep.image_url, class: "show_image" )  %>
-    </div>
-    <div class="d-flex p-2 justify-content-evenly">
+  <div class="d-flex justify-content-evenly">
+    <div class="show_card">
       <div class= "text-center title">
-        <h5>Location:</h5>
-        <p><%= @sheep.location %></p>
+      <h2><%= @sheep.name %></h2>
+      <h4><%= @sheep.breed%> breed</h4>
+      <%= image_tag(@sheep.image_url, class: "show_image" )  %>
       </div>
-      <div class= "text-center title">
-        <h5>Weight:</h5>
-        <p><%= @sheep.weight %> kg</p>
+      <div class="d-flex p-2 justify-content-evenly">
+        <div class= "text-center title">
+          <h5>Location:</h5>
+          <p><%= @sheep.location %></p>
+        </div>
+        <div class= "text-center title">
+          <h5>Weight:</h5>
+          <p><%= @sheep.weight %> kg</p>
+        </div>
+        <div class= "text-center title">
+          <h5>Price per day:</h5>
+          <p>£ <%= @sheep.day_rate%></p>
+        </div>
       </div>
-      <div class= "text-center title">
-        <h5>Price per day:</h5>
-        <p>£ <%= @sheep.day_rate%></p>
-      </div>
-    </div>
       <div class="about_me">
         <h5>About Me: </h5>
         <p><%= @sheep.description %></p>
       </div>
-        <div class=" d-flex justify-content-evenly my-3">
-          <div>
-            <%= link_to "Sheep List", sheep_index_path, class: "btn btn-leaf" %>
+      <div class="d-flex justify-content-evenly my-3">
+        <%= link_to "Sheep List", sheep_index_path, class: "btn btn-leaf" %>
+      </div>
+    </div>
+
+    <div class="show_card">
+      <% if @sheep.bookings.where(user: current_user).empty? %>
+        <%= simple_form_for [@sheep, @booking] do |f| %>
+          <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } }%>
+          <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+          <div class= "text-center title">
+            <h6>Price per day: £ <%=@sheep.day_rate %></h6>
+            <h6>Total Rental Cost: £ </h6>
           </div>
-          <div>
-            <%= link_to "Book now", "#", class: "btn btn-leaf justify-content-between" %>
+          <div class="d-flex justify-content-evenly my-3">
+            <%= f.submit 'Book Now', class: 'btn btn-leaf' %>
           </div>
-        </div>
+        <% end %>
+      <% else %>
+        <div class= "text-center title">
+          <p>You have a current booking. </p>
+          <%= link_to "Bookings", sheep_path, class: "btn btn-leaf" %>
+      <% end %>
       </div>
     </div>
   </div>
-</div>
-
-<div>
-<%= simple_form_for [@sheep, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :price_total%>
-  <%= f.submit %>
-<% end %>
 </div>
