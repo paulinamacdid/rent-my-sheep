@@ -26,6 +26,6 @@ class SheepController < ApplicationController
   private
 
   def sheep_params
-    params.require(:sheep).permit(:name, :image_url, :location, :description, :weight, :breed, :day_rate)
+    params.require(:sheep).permit(:name, :photo, :location, :description, :weight, :breed, :day_rate)
   end
 end
