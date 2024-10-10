@@ -23,6 +23,11 @@ class SheepController < ApplicationController
     end
   end
 
+  def destroy
+    @sheep.destroy
+    redirect_to list_path, status: :see_other
+  end
+
   private
 
   def sheep_params
