@@ -31,7 +31,7 @@ Sheep.create(name: "Baa Baa Black Sheep", image_url: "https://www.nativebreed.or
   is a classic sheep we all know and love and he loves it when people sing Baa Baa Black Sheep",
   weight: "90kg", breed: "Balwen Welsh Mountain", day_rate: "153.50", rating: "7", user: pamela)
 
-Sheep.create(name: "Dolly", image_url: "https://source.colostate.edu/wp-content/uploads/2017/02/DollySideView-e1487353921899.jpg", location: "London", description: "Dolly the sheep was the first cloned mammal
+Sheep.create(name: "Dolly", image_url: "https://cdn.mos.cms.futurecdn.net/QHPeCe49wKHdLjb8P2NdxF.jpg", location: "London", description: "Dolly the sheep was the first cloned mammal
   ever to be created from an adult cell. Affectionately named after country music legend Dolly Parton,
   Dolly caused excitement and controversy among both scientists and the public.  If you fancy meeting
   the ultimate contraversial sheep Dolly is the one but not the only", weight:
