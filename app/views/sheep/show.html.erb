@@ -36,3 +36,12 @@
     </div>
   </div>
 </div>
+
+<div>
+<%= simple_form_for [@sheep, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :price_total%>
+  <%= f.submit %>
+<% end %>
+</div>
