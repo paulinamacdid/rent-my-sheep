@@ -3,26 +3,22 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def new
-    @sheep = Sheep.find(params[:sheep_id])
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @sheep = Sheep.find(params[:sheep_id])
     @booking.sheep = @sheep
+    @booking.user = current_user
 
     if @booking.save
       redirect_to sheep_path(@sheep)
     else
-      render :new, status: :unprocessable_entity
+      render "sheep/show", status: :unprocessable_entity
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:comment, :rating)
+    params.require(:booking).permit(:start_date, :end_date, :price_total)
   end
 end
