@@ -5,6 +5,7 @@ class SheepController < ApplicationController
 
   def show
     @sheep = Sheep.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
