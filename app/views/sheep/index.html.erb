@@ -11,7 +11,11 @@
     <% @sheeps.each do |sheep| %>
       <div class="col-md-3">
         <div class="card h-100 position-relative" style="width: 18rem; border-color: #e3a16a; border-width: 2px; background-color: rgb(254, 254, 254);">
-          <%= image_tag sheep.image_url, class: "card-img-top" %>
+          <% if sheep.photo.attached? %>
+            <%= cl_image_tag sheep.photo.key, class: "card-img-top"   %>
+          <% else %>
+            <%= image_tag sheep.image_url, class: "card-img-top" %>
+          <% end %>
           <div class="card-body d-flex justify-content-between">
             <div class="card-body-description ">
               <h3 style="color: $ocean"><%= sheep.name %></h3>
