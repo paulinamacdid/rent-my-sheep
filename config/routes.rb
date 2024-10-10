@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "my_profile", to: "pages#my_profile"
   root to: "sheep#index"
   resources :sheep do
     resources :bookings, only: [ :destroy, :new, :create ]

@@ -5,6 +5,7 @@ class SheepController < ApplicationController
 
   def show
     @sheep = Sheep.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -16,8 +17,7 @@ class SheepController < ApplicationController
     @user = current_user
     @sheep.user = @user
     if @sheep.save
-      redirect_to sheep_path
-      # (@sheep)
+      redirect_to sheep_path(@sheep)
     else
       render :new, status: :unprocessable_entity
     end
