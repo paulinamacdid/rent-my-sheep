@@ -1,6 +1,13 @@
 class SheepController < ApplicationController
   def index
     @sheeps = Sheep.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @sheeps.geocoded.map do |flat|
+    {
+      lat: flat.latitude,
+      lng: flat.longitude
+      }
+    end
   end
 
   def show
