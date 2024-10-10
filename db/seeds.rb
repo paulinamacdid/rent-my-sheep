@@ -9,6 +9,7 @@
 #   end
 
 puts "cleaning the database first..."
+Booking.destroy_all
 Sheep.destroy_all
 User.destroy_all
 
