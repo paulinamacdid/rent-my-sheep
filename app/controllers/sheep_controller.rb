@@ -30,6 +30,12 @@ class SheepController < ApplicationController
     end
   end
 
+  def destroy
+    @sheep = Sheep.find(params[:id])
+    @sheep.destroy
+    redirect_to my_profile_path, status: :see_other
+  end
+
   private
 
   def sheep_params
