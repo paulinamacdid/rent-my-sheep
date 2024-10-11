@@ -1,0 +1,52 @@
+.show_card{
+  background-color: rgb(254, 254, 254);
+  border: solid, 2px;
+  border-color: $light-orange;
+  border-radius: 1%;
+  margin: 20px;
+  width: 50%;
+  position: relative;
+
+    .title {
+      margin-top: 20px;
+    }
+
+    .h2 {
+      font: $headers-font;
+      color: black;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    .h5 {
+    font: $headers-font;
+    color: black;
+    margin: 20px;
+    padding: 10px;
+    }
+
+    .p{
+    font: $body-font;
+    color: black;
+    margin: 20px;
+    padding: 10px;
+    }
+
+    .show_image{
+      width: 450px;
+      height: 300px;
+      margin: 20px;
+      border-radius: 5%;
+    }
+
+    .about_me {
+      margin: 30px;
+    }
+
+  }
+
+  .card-category-icon {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+  }
