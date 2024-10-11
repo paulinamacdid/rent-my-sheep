@@ -31,6 +31,9 @@
     </div>
 
     <div class="show_card">
+      <div>
+        <h1 class= "text-center title">Book Your Sheep Experience</h1>
+      </div>
       <% if @sheep.bookings.where(user: current_user).empty? %>
         <%= simple_form_for [@sheep, @booking] do |f| %>
           <%= f.input :start_date,
@@ -52,7 +55,7 @@
           <p>You have a current booking. </p>
           <%= link_to "Bookings", sheep_path, class: "btn btn-leaf" %>
       <% end %>
-      </div>
+        </div>
     </div>
   </div>
 </div>
