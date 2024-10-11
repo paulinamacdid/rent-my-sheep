@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "my_profile", to: "pages#my_profile"
   root to: "sheep#index"
   resources :sheep do
-    resources :bookings, only: [ :destroy, :create ]
+    resources :bookings, only: :create
   end
+  resources :bookings, only: :destroy
 end

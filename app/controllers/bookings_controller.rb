@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    raise
     @booking = Booking.find(params[:booking_id])
     @booking.destroy
     redirect_to my_profile_path, status: :see_other

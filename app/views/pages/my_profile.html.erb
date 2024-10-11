@@ -4,43 +4,53 @@
   </div>
 
   <div class="d-flex justify-content-evenly">
-    <div class="show_card">
-      <div class="x-position">
-        <%= link_to raw('<i class="fa-solid fa-x"></i>'),
-          sheep_path(@sheep),
-          class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      </div>
-      <div class= "text-center title">
-        <h3>My Sheep</h3>
-        <div>
-          <% if @sheep.length > 0 %>
-            <% @sheep.each do |sheep| %>
-              <h4><%= sheep.name %></h4>
-              <h4><%= sheep.image_url %></h4>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly my-3">
-          <%= link_to "Edit", sheep_path(@sheep), class: "btn btn-leaf" %>
+      <div class="show_card">
 
-    <div class="show_card">
-      <%= link_to raw('<i class="fa-solid fa-x"></i>'),
-        sheep_booking_path(@booking),
-        class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      <div class= "text-center title">
-        <h3>My Bookings</h3>
-        <% if @booking.length > 0 %>
-          <div class="small-card">
-            <% @booking.each do |booking| %>
-              <h4>Start Date: <%= booking.start_date %></h4>
-              <h4>End Date: <%= booking.end_date %></h4>
-              <h4>You have booked: <%= booking.sheep.name %></h4>
-              <%= link_to "Edit", "#", class: "btn btn-leaf" %>
+          <div class="x-position">
+            <%= link_to raw('<i class="fa-solid fa-x"></i>'),
+              sheep_path(@sheep),
+              class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
+
+          <div class= "text-center title">
+            <h3>My Sheep</h3>
+            <div>
+              <% if @sheep.length > 0 %>
+                <% @sheep.each do |sheep| %>
+                  <h4><%= sheep.name %></h4>
+                  <h4><%= sheep.image_url %></h4>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-evenly my-3">
+              <%= link_to "Edit", sheep_path(@sheep), class: "btn btn-leaf" %>
+          </div>
+      </div>
+
+      <div class="show_card">
+
+          <div class="x-position">
+                <%= link_to raw('<i class="fa-solid fa-x"></i>'),
+                  sheep_bookings_path(@booking),
+                  class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
+
+          <div class= "text-center title">
+            <h3>My Bookings</h3>
+            <% if @booking.length > 0 %>
+              <div class="small-card">
+                <% @booking.each do |booking| %>
+                  <h4>Start Date: <%= booking.start_date %></h4>
+                  <h4>End Date: <%= booking.end_date %></h4>
+                  <h4>You have booked: <%= booking.sheep.name %></h4>
+                  <%= link_to "Edit", "#", class: "btn btn-leaf" %>
+                <% end %>
+              </div>
             <% end %>
           </div>
-        <% end %>
+        </div>
+
       </div>
-    </div>
-  </div>
 </div>
