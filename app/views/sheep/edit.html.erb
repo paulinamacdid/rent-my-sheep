@@ -36,14 +36,16 @@
       </div>
         <%= simple_form_for [@sheep] do |f| %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: 'Name', label:false, input_html: { class: 'form-control' }%>
-            <%= f.input :photo, as: :file, placeholder: 'Upload your image here', label:false, input_html: { class: 'form-control' } %>
-            <%= f.input :location, placeholder: 'Location', label:false, input_html: { class: 'form-control' } %>
-            <%= f.input :description, placeholder: 'Add a description of your sheep here...', label:false, input_html: { class: 'form-control' } %>
-            <%= f.input :weight, placeholder: 'Weight (kg)', label:false, input_html: { class: 'form-control' } %>
-            <%= f.input :breed, placeholder: 'Breed', label:false, input_html: { class: 'form-control' } %>
-            <%= f.input :day_rate, placeholder: 'Price per day (£)', label:false, input_html: { class: 'form-control' } %>
+            <%= f.input :name, placeholder: 'Name', label:false, input_html: { class: 'form-control box-position' } %>
+            <%= f.input :photo, as: :file, placeholder: 'Upload your image here', label:false, input_html: { class: 'form-control box-position' } %>
+            <%= f.input :location, placeholder: 'Location', label:false, input_html: { class: 'form-control box-position' } %>
+            <%= f.input :description, placeholder: 'Add a description of your sheep here...', label:false, input_html: { class: 'form-control box-position' } %>
+            <%= f.input :weight, placeholder: 'Weight (kg)', label:false, input_html: { class: 'form-control box-position' } %>
+            <%= f.input :breed, placeholder: 'Breed', label:false, input_html: { class: 'form-control box-position' } %>
+            <%= f.input :day_rate, placeholder: 'Price per day (£)', label:false, input_html: { class: 'form-control box-position' } %>
+            <div>
             <%= f.submit 'Update', class: 'btn btn-leaf' %>
+            </div>
           </div>
       <% end %>
         </div>
