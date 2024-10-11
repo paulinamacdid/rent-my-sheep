@@ -10,10 +10,6 @@ class SheepController < ApplicationController
       "info_window", locals: {sheep: sheep}),
       marker_html: render_to_string(partial:
       "marker", locals: {sheep: sheep})
-    @markers = @sheeps.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
       }
     end
   end
@@ -42,6 +38,16 @@ class SheepController < ApplicationController
     @sheep = Sheep.find(params[:id])
     @sheep.destroy
     redirect_to my_profile_path, status: :see_other
+  end
+
+  def edit
+    @sheep = Sheep.find(params[:id])
+  end
+
+  def update
+    @sheep = Sheep.find(params[:id])
+    @sheep.update(sheep_params)
+    redirect_to sheep_path(@sheep)
   end
 
   private

@@ -2,22 +2,21 @@
 <% if @sheep.length > 0 %>
   <h1>My Sheep</h1>
 <% end %>
-<% %>
-<% %>
-<% %>
-<% %>
-
 
 <% @sheep.each do |she| %>
   <div class="col-md-3">
     <div class="card h-100 position-relative" style="width: 18rem; border-color: #e3a16a; border-width: 2px; background-color: rgb(254, 254, 254);">
-      <%= image_tag she.image_url, class: "card-img-top" %>
+      <% if she.photo.attached? %>
+        <%= cl_image_tag she.photo.key, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag she.image_url, class: "card-img-top" %>
+      <% end %>
       <div class="card-body d-flex justify-content-between">
         <div class="card-body-description ">
           <h3 style="color: $ocean"><%= she.name %></h3>
         </div>
         <div class="card-body-buttons position-absolute" style="bottom: 15px; right: 10px;">
-          <%= link_to "Edit", sheep_path(she), class: "btn btn-leaf" %>
+          <%= link_to "Edit", edit_sheep_path(she), class: "btn btn-leaf" %>
           <%= link_to "❌", sheep_path(she), class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         </div>
       </div>
