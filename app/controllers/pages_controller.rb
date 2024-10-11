@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def my_profile
-    @sheep = Sheep.where(user:current_user)
+    @sheep = Sheep.where(user: current_user)
+    @booking = Booking.where(user: current_user)
   end
 end
