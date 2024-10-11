@@ -1,4 +1,11 @@
 .btn-leaf {
-    background-color: $leaf; // Apply the color here
-    color: white; // Change this if you want the text color different
+  background-color: $leaf; // Apply the color here
+  color: white; // Change this if you want the text color different
+
+  &:hover {
+    color: $leaf;
+    font-weight: 700;
+    border-color: $leaf;
+    border-width: 2px;
+  }
 }
