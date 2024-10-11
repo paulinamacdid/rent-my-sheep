@@ -36,6 +36,16 @@ class SheepController < ApplicationController
     redirect_to my_profile_path, status: :see_other
   end
 
+  def edit
+    @sheep = Sheep.find(params[:id])
+  end
+
+  def update
+    @sheep = Sheep.find(params[:id])
+    @sheep.update(sheep_params)
+    redirect_to sheep_path(@sheep)
+  end
+
   private
 
   def sheep_params

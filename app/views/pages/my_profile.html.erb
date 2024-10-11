@@ -17,7 +17,7 @@
           <h3 style="color: $ocean"><%= she.name %></h3>
         </div>
         <div class="card-body-buttons position-absolute" style="bottom: 15px; right: 10px;">
-          <%= link_to "Edit", sheep_path(she), class: "btn btn-leaf" %>
+          <%= link_to "Edit", edit_sheep_path(she), class: "btn btn-leaf" %>
           <%= link_to "❌", sheep_path(she), class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         </div>
       </div>

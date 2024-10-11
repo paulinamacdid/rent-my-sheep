@@ -1,0 +1,51 @@
+<h1>Spruce up your sheep and send them back to the flock!</h1>
+<div class="container">
+  <div class="d-flex justify-content-evenly">
+    <div class="show_card">
+      <div class= "text-center title">
+      <h2><%= @sheep.name %></h2>
+      <h4><%= @sheep.breed%> breed</h4>
+      <%= image_tag(@sheep.image_url, class: "show_image" )  %>
+      </div>
+      <div class="d-flex p-2 justify-content-evenly">
+        <div class= "text-center title">
+          <h5>Location:</h5>
+          <p><%= @sheep.location %></p>
+        </div>
+        <div class= "text-center title">
+          <h5>Weight:</h5>
+          <p><%= @sheep.weight %> kg</p>
+        </div>
+        <div class= "text-center title">
+          <h5>Price per day:</h5>
+          <p>£ <%= @sheep.day_rate%></p>
+        </div>
+      </div>
+      <div class="about_me">
+        <h5>About Me: </h5>
+        <p><%= @sheep.description %></p>
+      </div>
+      <div class="d-flex justify-content-evenly my-3">
+        <%= link_to "Sheep List", sheep_index_path, class: "btn btn-leaf" %>
+      </div>
+    </div>
+
+    <div class="show_card">
+      <div>
+        <h2 class= "text-center title">Tweaks here...</h2>
+      </div>
+        <%= simple_form_for [@sheep] do |f| %>
+          <div class="form-inputs">
+            <%= f.input :name, placeholder: 'Name', label:false, input_html: { class: 'form-control' }%>
+            <%= f.input :photo, as: :file, placeholder: 'Upload your image here', label:false, input_html: { class: 'form-control' } %>
+            <%= f.input :location, placeholder: 'Location', label:false, input_html: { class: 'form-control' } %>
+            <%= f.input :description, placeholder: 'Add a description of your sheep here...', label:false, input_html: { class: 'form-control' } %>
+            <%= f.input :weight, placeholder: 'Weight (kg)', label:false, input_html: { class: 'form-control' } %>
+            <%= f.input :breed, placeholder: 'Breed', label:false, input_html: { class: 'form-control' } %>
+            <%= f.input :day_rate, placeholder: 'Price per day (£)', label:false, input_html: { class: 'form-control' } %>
+            <%= f.submit 'Update', class: 'btn btn-leaf' %>
+          </div>
+      <% end %>
+        </div>
+  </div>
+</div>
