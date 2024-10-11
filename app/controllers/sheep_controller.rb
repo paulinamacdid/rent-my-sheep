@@ -10,6 +10,10 @@ class SheepController < ApplicationController
       "info_window", locals: {sheep: sheep}),
       marker_html: render_to_string(partial:
       "marker", locals: {sheep: sheep})
+    @markers = @sheeps.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
       }
     end
   end
