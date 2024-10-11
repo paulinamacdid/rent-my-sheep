@@ -3,9 +3,9 @@ class SheepController < ApplicationController
     @sheeps = Sheep.all
     # The `geocoded` scope filters only flats with coordinates
     @markers = @sheeps.geocoded.map do |flat|
-    {
-      lat: flat.latitude,
-      lng: flat.longitude
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
       }
     end
   end
