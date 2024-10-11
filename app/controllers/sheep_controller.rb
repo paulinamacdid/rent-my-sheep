@@ -24,7 +24,7 @@ class SheepController < ApplicationController
     @user = current_user
     @sheep.user = @user
     if @sheep.save
-      redirect_to sheep_path(@sheep)
+      redirect_to my_profile_path
     else
       render :new, status: :unprocessable_entity
     end

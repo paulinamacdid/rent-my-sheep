@@ -1,10 +1,11 @@
 .show_card{
-background-color: rgb(254, 254, 254);
-border: solid, 2px;
-border-color: $light-orange;
-border-radius: 1%;
-margin: 20px;
-width: 50%;
+  position:relative;
+  background-color: rgb(254, 254, 254);
+  border: solid, 2px;
+  border-color: $light-orange;
+  border-radius: 1%;
+  margin: 20px;
+  width: 50%;
 
   .title {
     margin-top: 20px;
@@ -42,8 +43,25 @@ width: 50%;
     margin: 30px;
   }
 
+  .x-position{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+  }
+
 }
 
 .card-contents {
   margin-top: 5%;
+}
+
+.small-card{
+  background-color: rgb(254, 254, 254);
+  border: solid, 2px;
+  border-color: $light-orange;
+  border-radius: 1%;
+  margin: 20px;
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
 }
