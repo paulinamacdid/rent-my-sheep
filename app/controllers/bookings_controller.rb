@@ -10,14 +10,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to sheep_path(@sheep)
+      redirect_to my_profile_path
     else
       render "sheep/show", status: :unprocessable_entity
     end
   end
 
   def destroy
-    raise
     @booking = Booking.find(params[:booking_id])
     @booking.destroy
     redirect_to my_profile_path, status: :see_other

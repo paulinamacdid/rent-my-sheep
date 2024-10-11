@@ -18,7 +18,11 @@
               <% if @sheep.length > 0 %>
                 <% @sheep.each do |sheep| %>
                   <h4><%= sheep.name %></h4>
-                  <h4><%= sheep.image_url %></h4>
+                  <h4><% if sheep.photo.attached? %>
+            <%= cl_image_tag sheep.photo.key, class: "card-img-top"   %>
+          <% else %>
+            <%= image_tag sheep.image_url, class: "card-img-top" %>
+          <% end %></h4>
                 <% end %>
               <% end %>
             </div>
